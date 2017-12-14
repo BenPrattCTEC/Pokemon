@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>580</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Fire/
+--
+Data Members
+
+--
+Methods
+
+burn(Pokemon target): int
+flame(Pokemon target): int
+firebolt(Pokemon target): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>380</y>
+      <w>270</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Package :: Class
+--
+Data Members
+
+--
+Methods/Constructors</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>120</x>
+      <y>70</y>
+      <w>140</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Pokemon Project
+Ben Pratt
+12/14/2017
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>280</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model :: Pokemon/
+--
+Data Members
+name: String
+number: int
+canEvolve: boolean
+health: int
+attackPoints: int
+enhancementModifier: double
+
+--
+Methods</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>200</y>
+      <w>270</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Package :: AbstractClass/Interface
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>580</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Water/
+--
+Data Members
+
+--
+Methods
+
+splash(Pokemon target): int
+spray(Pokemon target): int
+aquirt(Pokemon target): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>510</y>
+      <w>290</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>870</x>
+      <y>510</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>510</y>
+      <w>300</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>580</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Earth/
+--
+Data Members
+
+--
+Methods
+
+stomp(Pokemon target): int
+shake(Pokemon target): int
+smash(Pokemon target): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
