@@ -1,30 +1,35 @@
 package pokemon.model.pokemon;
 
-import pokemon.model.Pokemon;
-import pokemon.model.WaterType;
+import pokemon.model.*;
 
 public class FishFace extends Pokemon implements WaterType{
-	public FishFace(int number, String name){
+	FishFace(int number, String name){
 		super(number, name);
+	}
+	FishFace(String name){
+		super(0, name);
+	}
+	FishFace(){
+		super(0, "FishFace");
 	}
 	
 	public Pokemon splash(Pokemon target){
-		return target;
+		return Attacks.splash(target);
 	}
 	
 	public Pokemon spray(Pokemon target){
-		return target;
+		return Attacks.spray(target);
 	}
 	
 	public Pokemon squirt(Pokemon target){
-		return target;
+		return Attacks.squirt(target);
 	}
 	
 	public Pokemon slap(Pokemon target){
-		return target;
+		return Attacks.slap(target);
 	}
 	
 	public Pokemon flood(Pokemon target){
-		return target;
+		return Attacks.flood(target);
 	}
 }

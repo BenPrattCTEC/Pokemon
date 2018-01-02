@@ -13,6 +13,19 @@ public abstract class Pokemon {
 		this.name = name;
 		this.number = number;
 	}
+	public Pokemon(int number, String name, int healthPoints, int attackPoints, double enhancementModifier, boolean canEvolve){
+		setup(number, name, healthPoints, attackPoints, enhancementModifier, canEvolve);
+		
+	}
+	
+	protected void setup(int number, String name, int healthPoints, int attackPoints, double enhancementModifier, boolean canEvolve){
+		this.number = number;
+		this.name = name;
+		this.healthPoints = healthPoints;
+		this.attackPoints = attackPoints;
+		this.enhancementModifier = enhancementModifier;
+		this.canEvolve = canEvolve;
+	}
 	
 	public final String[] getPokemonTypes(){
 		Class<?> [] types = getClass().getInterfaces();
@@ -33,7 +46,21 @@ public abstract class Pokemon {
 	public String getPokemonInformation(){
 		return "this Pokemon is of type" + this.getClass().getSimpleName();
 	}
+	
+	/**
+	 * @return the Number
+	 */
+	public int getNumber() {
+		return number;
+	}
 
+	/**
+	 * @param Number Number to set
+	 */
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	
 	/**
 	 * @return the healthPoints
 	 */
@@ -103,4 +130,5 @@ public abstract class Pokemon {
 	public void setCanEvolve(boolean canEvolve) {
 		this.canEvolve = canEvolve;
 	}
+	
 }

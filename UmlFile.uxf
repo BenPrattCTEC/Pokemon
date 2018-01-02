@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1020</x>
-      <y>580</y>
-      <w>270</w>
-      <h>240</h>
+      <x>1056</x>
+      <y>296</y>
+      <w>216</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>/pokemon.model::Fire/
 --
@@ -16,34 +16,18 @@ Data Members
 --
 Methods
 
-burn(Pokemon target): int
-flame(Pokemon target): int
-firebolt(Pokemon target): int</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>380</y>
-      <w>270</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>Package :: Class
---
-Data Members
-
---
-Methods/Constructors</panel_attributes>
+burn(Pokemon target): Pokemon
+flame(Pokemon target): Pokemon
+firebolt(Pokemon target): Pokemon</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>120</x>
-      <y>70</y>
-      <w>140</w>
-      <h>60</h>
+      <x>648</x>
+      <y>48</y>
+      <w>112</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Pokemon Project
 Ben Pratt
@@ -54,10 +38,10 @@ bg=blue</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>280</y>
-      <w>270</w>
-      <h>240</h>
+      <x>952</x>
+      <y>0</y>
+      <w>216</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>/pokemon.model :: Pokemon/
 --
@@ -68,6 +52,7 @@ canEvolve: boolean
 health: int
 attackPoints: int
 enhancementModifier: double
+weakness: Pokemon //the type
 
 --
 Methods</panel_attributes>
@@ -76,23 +61,10 @@ Methods</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>200</y>
-      <w>270</w>
-      <h>170</h>
-    </coordinates>
-    <panel_attributes>Package :: AbstractClass/Interface
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>460</x>
-      <y>580</y>
-      <w>270</w>
-      <h>240</h>
+      <x>168</x>
+      <y>296</y>
+      <w>216</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>/pokemon.model::Water/
 --
@@ -101,54 +73,18 @@ Data Members
 --
 Methods
 
-splash(Pokemon target): int
-spray(Pokemon target): int
-aquirt(Pokemon target): int</panel_attributes>
+splash(Pokemon target): Pokemon
+spray(Pokemon target): Pokemon
+squirt(Pokemon target): Pokemon</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>880</x>
-      <y>510</y>
-      <w>290</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;270.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>870</x>
-      <y>510</y>
-      <w>120</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>590</x>
-      <y>510</y>
-      <w>300</w>
-      <h>90</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;.
-&lt;&lt;instanceOf&gt;&gt;</panel_attributes>
-    <additional_attributes>280.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
-      <y>580</y>
-      <w>270</w>
-      <h>240</h>
+      <x>496</x>
+      <y>296</y>
+      <w>216</w>
+      <h>192</h>
     </coordinates>
     <panel_attributes>/pokemon.model::Earth/
 --
@@ -157,9 +93,348 @@ Data Members
 --
 Methods
 
-stomp(Pokemon target): int
-shake(Pokemon target): int
-smash(Pokemon target): int</panel_attributes>
+stomp(Pokemon target): Pokemon
+shake(Pokemon target): Pokemon
+smash(Pokemon target): Pokemon</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1408</x>
+      <y>296</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Electric/
+--
+Data Members
+
+--
+Methods
+
+spark(Pokemon target): Pokemon
+zap(Pokemon target): Pokemon
+shock(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>576</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Turtleio/
+--
+Data Members
+
+--
+Methods
+
+Shell(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>520</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::FishFace/
+--
+Data Members
+
+--
+Methods
+
+slap(Pokemon target): Pokemon
+flood(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1096</x>
+      <y>184</y>
+      <w>80</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1160</x>
+      <y>184</y>
+      <w>368</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;440.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>184</y>
+      <w>440</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>530.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>184</y>
+      <w>704</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>860.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>480</y>
+      <w>56</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>104</x>
+      <y>480</y>
+      <w>152</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>248</x>
+      <y>176</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>480</y>
+      <w>224</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>520</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Molar/
+--
+Data Members
+
+--
+Methods
+
+undermine(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>480</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1032</x>
+      <y>480</y>
+      <w>136</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>944</x>
+      <y>520</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Drago/
+--
+Data Members
+
+--
+Methods
+
+fireBall(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1176</x>
+      <y>520</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Lizzle/
+--
+Data Members
+
+--
+Methods
+
+bite(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1168</x>
+      <y>480</y>
+      <w>128</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1416</x>
+      <y>520</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::Sparkydo/
+--
+Data Members
+
+--
+Methods
+
+Electrocute(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1504</x>
+      <y>480</y>
+      <w>32</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;20.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1296</x>
+      <y>776</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::BurnySparkydo/
+--
+Data Members
+
+--
+Methods</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1392</x>
+      <y>704</y>
+      <w>152</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1264</x>
+      <y>480</y>
+      <w>152</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;30.0;170.0;340.0;170.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>480</y>
+      <w>224</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>712</x>
+      <y>584</y>
+      <w>216</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>/pokemon.model::TrunkyDude/
+--
+Data Members
+
+--
+Methods
+
+crush(Pokemon target): Pokemon</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>480</y>
+      <w>672</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>820.0;10.0;740.0;30.0;740.0;330.0;150.0;330.0;150.0;100.0;50.0;100.0;10.0;130.0</additional_attributes>
   </element>
 </diagram>
