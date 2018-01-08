@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class FishFace extends Pokemon implements WaterType{
-	FishFace(int number, String name){
+	public FishFace(int number, String name){
 		super(number, name);
 	}
-	FishFace(String name){
+	public FishFace(String name){
 		super(0, name);
 	}
-	FishFace(){
+	public FishFace(){
 		super(0, "FishFace");
 	}
 	

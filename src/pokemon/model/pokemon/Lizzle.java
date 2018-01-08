@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class Lizzle extends Pokemon implements FireType {
-	Lizzle(int number, String name){
+	public Lizzle(int number, String name){
 		super(number, name);
 	}
-	Lizzle(String name){
+	public Lizzle(String name){
 		super(0, name);
 	}
-	Lizzle(){
+	public Lizzle(){
 		super(0, "Lizzle");
 	}
 	

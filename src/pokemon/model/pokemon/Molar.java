@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class Molar extends Pokemon implements EarthType{
-	Molar(int number, String name){
+	public Molar(int number, String name){
 		super(number, name);
 	}
-	Molar(String name){
+	public Molar(String name){
 		super(0, name);
 	}
-	Molar(){
+	public Molar(){
 		super(0, "Molar");
 	}
 	

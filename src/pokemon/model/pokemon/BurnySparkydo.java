@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class BurnySparkydo extends Sparkydo implements FireType {
-	BurnySparkydo(int number, String name){
+	public BurnySparkydo(int number, String name){
 		super(number, name);
 	}
-	BurnySparkydo(String name){
+	public BurnySparkydo(String name){
 		super(0, name);
 	}
-	BurnySparkydo(){
+	public BurnySparkydo(){
 		super(0, "BurnySparkydo");
 	}
 	

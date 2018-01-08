@@ -40,7 +40,7 @@ public abstract class Pokemon {
 	}
 	
 	public String toString(){
-		return "Hi, i am a " + name + "and my HP is " + healthPoints;
+		return "Hi, i am a " + name + " and my HP is " + healthPoints;
 	}
 	
 	public String getPokemonInformation(){

@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class Drago extends Pokemon implements FireType {
-	Drago(int number, String name){
+	public Drago(int number, String name){
 		super(number, name);
 	}
-	Drago(String name){
+	public Drago(String name){
 		super(0, name);
 	}
-	Drago(){
+	public Drago(){
 		super(0, "Drago");
 	}
 	

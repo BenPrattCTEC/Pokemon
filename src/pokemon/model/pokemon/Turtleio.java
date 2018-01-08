@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class Turtleio extends Pokemon implements WaterType, EarthType {
-	Turtleio(int number, String name){
+	public Turtleio(int number, String name){
 		super(number, name);	
 	}
-	Turtleio(String name){
+	public Turtleio(String name){
 		super(0, name);	
 	}
-	Turtleio(){
+	public Turtleio(){
 		super(0, "Turtleio");	
 	}
 	

@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class TrunkyDude extends Pokemon implements EarthType{
-	TrunkyDude(int number, String name){
+	public TrunkyDude(int number, String name){
 		super(number, name);	
 	}
-	TrunkyDude(String name){
+	public TrunkyDude(String name){
 		super(0, name);	
 	}
-	TrunkyDude(){
+	public TrunkyDude(){
 		super(0, "TrunkyDude");	
 	}
 	

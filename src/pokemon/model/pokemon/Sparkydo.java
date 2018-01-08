@@ -3,13 +3,13 @@ package pokemon.model.pokemon;
 import pokemon.model.*;
 
 public class Sparkydo extends Pokemon implements ElectricType {
-	Sparkydo(int number, String name){
+	public Sparkydo(int number, String name){
 		super(number, name);
 	}
-	Sparkydo(String name){
+	public Sparkydo(String name){
 		super(0, name);
 	}
-	Sparkydo(){
+	public Sparkydo(){
 		super(0, "Sparkydo");
 	}
 	

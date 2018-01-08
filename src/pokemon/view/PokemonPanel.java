@@ -1,8 +1,10 @@
 package pokemon.view;
 
 import pokemon.controller.PokemonController;
+import pokemon.model.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -31,7 +33,7 @@ public class PokemonPanel extends JPanel {
 	
 	private JButton saveButton;
 	private JButton clearButton;
-	private JComboBox pokedexDropdown;
+	private JComboBox<String> pokedexDropdown;
 	
 	private JPanel firstType;
 	private JPanel secondType;
@@ -46,17 +48,100 @@ public class PokemonPanel extends JPanel {
 		
 		setupPanel();
 		setupLayout();
+		setupComboBox();
 		setupListeners();
 	}
 	
-	private void updatePokedexInfo(int index){
+	private void updateImage(){
+		
+	}
+	
+	private void updateTypePanels(){
+	}
+	
+	private void updatePokedexInfo(int index) {
 		nameField.setText(controller.getPokedex().get(index).getName());
 		evolvableBox.setSelected(controller.getPokedex().get(index).isCanEvolve());
 		numberField.setText(controller.getPokedex().get(index).getNumber() + "");
 		attackField.setText(controller.getPokedex().get(index).getAttackPoints() + "");
 		modifierField.setText(controller.getPokedex().get(index).getEnhancementModifier() + "");
 	}
-
+	
+	private void setupComboBox() {
+		DefaultComboBoxModel pokemonModel = new DefaultComboBoxModel(controller.convertPokedex());
+		pokedexDropdown.setModel(pokemonModel);
+	}
+	
+	private void updateTypesPanels() {
+		String[] types = controller.getPokedex().get(pokedexDropdown.getSelectedIndex()).getPokemonTypes();
+		firstType.setBackground(Color.LIGHT_GRAY);
+		secondType.setBackground(Color.LIGHT_GRAY);
+		thirdType.setBackground(Color.LIGHT_GRAY);
+		fourthType.setBackground(Color.LIGHT_GRAY);
+		try {
+			switch (types[0]) {
+				case "EarthType":
+					firstType.setBackground(Color.BLACK);
+					break;
+				case "ElectricType":
+					firstType.setBackground(Color.YELLOW);
+					break;
+				case "FireType":
+					firstType.setBackground(Color.RED);
+					break;
+				case "WaterType":
+					firstType.setBackground(Color.BLUE);
+					break;
+			}
+			switch (types[1]) {
+				case "EarthType":
+					secondType.setBackground(Color.BLACK);
+					break;
+				case "ElectricType":
+					secondType.setBackground(Color.YELLOW);
+					break;
+				case "FireType":
+					secondType.setBackground(Color.RED);
+					break;
+				case "WaterType":
+					secondType.setBackground(Color.BLUE);
+					break;
+				default:
+			}
+			switch (types[2]) {
+				case "EarthType":
+					thirdType.setBackground(Color.BLACK);
+					break;
+				case "ElectricType":
+					thirdType.setBackground(Color.YELLOW);
+					break;
+				case "FireType":
+					thirdType.setBackground(Color.RED);
+					break;
+				case "WaterType":
+					thirdType.setBackground(Color.BLUE);
+					break;
+			}
+			switch (types[3]) {
+				case "EarthType":
+					fourthType.setBackground(Color.BLACK);
+					break;
+				case "ElectricType":
+					fourthType.setBackground(Color.YELLOW);
+					break;
+				case "FireType":
+					fourthType.setBackground(Color.RED);
+					break;
+				case "WaterType":
+					fourthType.setBackground(Color.BLUE);
+					break;
+			}
+		}
+		catch (IndexOutOfBoundsException e) {
+		}
+		
+	}
+	
 	/**
 	 * Sets up the Panel
 	 */
@@ -82,7 +167,9 @@ public class PokemonPanel extends JPanel {
 		layout.putConstraint(SpringLayout.EAST, evolvableLabel, 0, SpringLayout.EAST, healthLabel);
 		modifierLabel = new JLabel("Modifier");
 		layout.putConstraint(SpringLayout.NORTH, modifierLabel, 0, SpringLayout.NORTH, evolvableLabel);
-		iconLabel = new JLabel("Icon");
+		
+		// iconLabel = new JLabel("");
+		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("/assets/default.png")), JLabel.CENTER);
 		
 		evolvableBox = new JCheckBox();
 		layout.putConstraint(SpringLayout.WEST, modifierLabel, 54, SpringLayout.EAST, evolvableBox);
@@ -96,8 +183,8 @@ public class PokemonPanel extends JPanel {
 		healthField = new JTextField();
 		modifierField = new JTextField();
 		
-		descriptionArea = new JTextArea();
-		typeArea = new JTextArea();
+		descriptionArea = new JTextArea(5, 10);
+		typeArea = new JTextArea(4, 15);
 		
 		saveButton = new JButton("Save");
 		layout.putConstraint(SpringLayout.SOUTH, saveButton, -10, SpringLayout.SOUTH, this);
@@ -155,5 +242,13 @@ public class PokemonPanel extends JPanel {
 	 */
 	private void setupListeners() {
 		
+		pokedexDropdown.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent selection) {
+				updatePokedexInfo(pokedexDropdown.getSelectedIndex());
+				updateImage();
+				updateTypePanels();
+				repaint();
+			}
+		});
 	}
 }
