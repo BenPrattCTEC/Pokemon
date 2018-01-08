@@ -55,9 +55,7 @@ public class PokemonPanel extends JPanel {
 	private void updateImage(){
 		
 	}
-	
-	private void updateTypePanels(){
-	}
+
 	
 	private void updatePokedexInfo(int index) {
 		nameField.setText(controller.getPokedex().get(index).getName());
@@ -72,7 +70,7 @@ public class PokemonPanel extends JPanel {
 		pokedexDropdown.setModel(pokemonModel);
 	}
 	
-	private void updateTypesPanels() {
+	private void updateTypePanels() {
 		String[] types = controller.getPokedex().get(pokedexDropdown.getSelectedIndex()).getPokemonTypes();
 		firstType.setBackground(Color.LIGHT_GRAY);
 		secondType.setBackground(Color.LIGHT_GRAY);
