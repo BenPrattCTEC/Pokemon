@@ -189,35 +189,50 @@ public class PokemonPanel extends JPanel {
 		iconLabel = new JLabel("", new ImageIcon(getClass().getResource("/assets/default.png")), JLabel.CENTER);
 		
 		evolvableBox = new JCheckBox();
+		layout.putConstraint(SpringLayout.WEST, iconLabel, 2, SpringLayout.EAST, evolvableBox);
 		layout.putConstraint(SpringLayout.WEST, modifierLabel, 54, SpringLayout.EAST, evolvableBox);
 		layout.putConstraint(SpringLayout.EAST, modifierLabel, 110, SpringLayout.EAST, evolvableBox);
 		layout.putConstraint(SpringLayout.NORTH, evolvableBox, 0, SpringLayout.NORTH, evolvableLabel);
 		layout.putConstraint(SpringLayout.WEST, evolvableBox, 22, SpringLayout.EAST, evolvableLabel);
 		nameField = new JTextField();
-		layout.putConstraint(SpringLayout.WEST, iconLabel, 143, SpringLayout.EAST, nameField);
+		layout.putConstraint(SpringLayout.NORTH, nameField, -2, SpringLayout.NORTH, healthLabel);
+		layout.putConstraint(SpringLayout.WEST, nameField, 285, SpringLayout.WEST, this);
 		numberField = new JTextField();
 		attackField = new JTextField();
 		healthField = new JTextField();
 		modifierField = new JTextField();
 		
 		descriptionArea = new JTextArea(5, 10);
+		layout.putConstraint(SpringLayout.WEST, descriptionArea, 21, SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.SOUTH, descriptionArea, 0, SpringLayout.SOUTH, this);
 		typeArea = new JTextArea(4, 15);
+		layout.putConstraint(SpringLayout.EAST, nameField, 0, SpringLayout.EAST, typeArea);
+		layout.putConstraint(SpringLayout.NORTH, typeArea, 0, SpringLayout.NORTH, descriptionArea);
 		
 		saveButton = new JButton("Save");
+		layout.putConstraint(SpringLayout.EAST, typeArea, -23, SpringLayout.WEST, saveButton);
 		layout.putConstraint(SpringLayout.SOUTH, saveButton, -10, SpringLayout.SOUTH, this);
-		layout.putConstraint(SpringLayout.EAST, saveButton, -31, SpringLayout.EAST, this);
+		layout.putConstraint(SpringLayout.EAST, saveButton, -10, SpringLayout.EAST, this);
 		clearButton = new JButton("Clear");
-		layout.putConstraint(SpringLayout.SOUTH, clearButton, -10, SpringLayout.SOUTH, this);
-		layout.putConstraint(SpringLayout.EAST, clearButton, -6, SpringLayout.WEST, saveButton);
+		layout.putConstraint(SpringLayout.WEST, clearButton, 0, SpringLayout.WEST, saveButton);
+		layout.putConstraint(SpringLayout.SOUTH, clearButton, -6, SpringLayout.NORTH, saveButton);
 		pokedexDropdown = new JComboBox();
 		layout.putConstraint(SpringLayout.NORTH, iconLabel, 5, SpringLayout.NORTH, pokedexDropdown);
 		layout.putConstraint(SpringLayout.NORTH, pokedexDropdown, 10, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.EAST, pokedexDropdown, -10, SpringLayout.EAST, this);
 		
 		firstType = new JPanel();
+		layout.putConstraint(SpringLayout.WEST, firstType, 0, SpringLayout.WEST, evolvableLabel);
+		layout.putConstraint(SpringLayout.SOUTH, firstType, -70, SpringLayout.NORTH, evolvableLabel);
 		secondType = new JPanel();
+		layout.putConstraint(SpringLayout.NORTH, secondType, 0, SpringLayout.NORTH, firstType);
+		layout.putConstraint(SpringLayout.WEST, secondType, 0, SpringLayout.WEST, healthLabel);
 		thirdType = new JPanel();
+		layout.putConstraint(SpringLayout.SOUTH, thirdType, 0, SpringLayout.SOUTH, firstType);
 		fourthType = new JPanel();
+		layout.putConstraint(SpringLayout.EAST, thirdType, -11, SpringLayout.WEST, fourthType);
+		layout.putConstraint(SpringLayout.NORTH, fourthType, 0, SpringLayout.NORTH, firstType);
+		layout.putConstraint(SpringLayout.WEST, fourthType, 38, SpringLayout.EAST, secondType);
 		
 		this.add(healthLabel);
 		this.add(attackLabel);
@@ -225,7 +240,7 @@ public class PokemonPanel extends JPanel {
 		this.add(numberLabel);
 		this.add(evolvableLabel);
 		this.add(modifierLabel);
-		this.add(iconLabel);
+//		this.add(iconLabel);
 		
 		this.add(evolvableBox);
 		this.add(nameField);
@@ -270,6 +285,7 @@ public class PokemonPanel extends JPanel {
 	
 		saveButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent click){
+				System.out.println("Save Clicked");
 				if(controller.isValidInt(attackField.getText()) && controller.isValidInt(healthField.getText()) && controller.isValidDouble(modifierField.getText())){
 					int selected = pokedexDropdown.getSelectedIndex();
 					int health = Integer.parseInt(healthField.getText());
@@ -279,6 +295,9 @@ public class PokemonPanel extends JPanel {
 					boolean evolvable = evolvableBox.isSelected();
 					
 					controller.updateSelected(selected, health, attack, evolvable, modifier, name);
+				}
+				else {
+					System.out.println("one or more fields are invalid");
 				}
 			}
 		});

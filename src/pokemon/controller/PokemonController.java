@@ -45,6 +45,10 @@ public class PokemonController {
 		selected.setEnhancementModifier(modify);
 		selected.setName(name);
 		selected.setHealthPoints(health);
+		
+		System.out.println("Saving...");
+		
+		FileController.savePokemonFile((ArrayList<Pokemon>) pokedex);
 	}
 	
 	public List<Pokemon> getPokedex() {
@@ -67,7 +71,7 @@ public class PokemonController {
 			Double.parseDouble(sample);
 		}
 		catch (NumberFormatException e) {
-			return false;
+			return true;
 		}
 		
 		return true;

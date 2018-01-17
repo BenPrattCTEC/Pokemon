@@ -25,7 +25,7 @@ public class PokemonFrame extends JFrame {
 	private void setupFrame(){
 		
 		this.setContentPane(panel);
-		this.setSize(900, 500);
+		this.setSize(1200, 750);
 		this.setResizable(true);
 		this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
 		
