@@ -53,7 +53,19 @@ public class PokemonPanel extends JPanel {
 	}
 	
 	private void updateImage(){
+		String path = "pokemon/assets/";
+		String defaultName = "default";
+		String name = pokedexDropdown.getSelectedItem().toString();
+		String extention = ".png";
+		ImageIcon pokemonIcon;
 		
+		try{
+			pokemonIcon = new ImageIcon(getClass().getResource(path + name + extention));
+		}
+		catch(NullPointerException e){
+			pokemonIcon = new ImageIcon(getClass().getResource(path + defaultName + extention));
+		}
+		iconLabel.setIcon(pokemonIcon);
 	}
 
 	
@@ -63,6 +75,13 @@ public class PokemonPanel extends JPanel {
 		numberField.setText(controller.getPokedex().get(index).getNumber() + "");
 		attackField.setText(controller.getPokedex().get(index).getAttackPoints() + "");
 		modifierField.setText(controller.getPokedex().get(index).getEnhancementModifier() + "");
+		
+		descriptionArea.setText(controller.getPokedex().get(index).toString());
+		typeArea.setText("");
+		
+		for(String current: controller.getPokedex().get(index).getPokemonTypes()){
+			typeArea.append(current + "\n");
+		}
 	}
 	
 	private void setupComboBox() {
@@ -246,6 +265,21 @@ public class PokemonPanel extends JPanel {
 				updateImage();
 				updateTypePanels();
 				repaint();
+			}
+		});
+	
+		saveButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent click){
+				if(controller.isValidInt(attackField.getText()) && controller.isValidInt(healthField.getText()) && controller.isValidDouble(modifierField.getText())){
+					int selected = pokedexDropdown.getSelectedIndex();
+					int health = Integer.parseInt(healthField.getText());
+					int attack = Integer.parseInt(attackField.getText());
+					double modifier = Double.parseDouble(modifierField.getText());
+					String name = nameField.getText();
+					boolean evolvable = evolvableBox.isSelected();
+					
+					controller.updateSelected(selected, health, attack, evolvable, modifier, name);
+				}
 			}
 		});
 	}
